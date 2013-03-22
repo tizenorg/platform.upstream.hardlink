@@ -2,7 +2,6 @@ Summary:	Create a tree of hardlinks
 Name:		hardlink
 Version:	1.0
 Release:	1
-Epoch:		1
 Group:		Base/Tools
 URL:		http://pkgs.fedoraproject.org/gitweb/?p=hardlink.git
 License:	GPL+
