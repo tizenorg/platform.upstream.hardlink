@@ -7,6 +7,7 @@ URL:		http://pkgs.fedoraproject.org/gitweb/?p=hardlink.git
 License:	GPL+
 Source0:	hardlink.c
 Source1:	hardlink.1
+Source1001: 	hardlink.manifest
 
 %description
 hardlink is used to create a tree of hard links.
@@ -15,6 +16,7 @@ amount of diskspace used by each kernel package installed.
 
 %prep
 %setup -q -c -T
+cp %{SOURCE1001} .
 install -pm 644 %{SOURCE0} hardlink.c
 
 %build
@@ -29,6 +31,7 @@ install -D -m 755 hardlink $RPM_BUILD_ROOT%{_sbindir}/hardlink
 rm -rf $RPM_BUILD_ROOT
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_sbindir}/hardlink
 %{_mandir}/man1/hardlink.1*
